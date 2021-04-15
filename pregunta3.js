@@ -3,7 +3,10 @@
 // si la longitud del array es < 3 se debe retornar undefined
 
 const greater3 = nums => {
-    
+    for(let i = 0; i < 2; i++)
+        nums = nums.filter( num => num !== Math.max(...nums))
+    if(nums.length > 0) return Math.max(...nums)
+    else return undefined
 }
 
 

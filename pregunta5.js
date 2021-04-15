@@ -20,3 +20,18 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
 
+
+function setLabel(label, beerName){
+  label[2] = 'tecnoshare.sharepoint.com'
+  let file = label[6].split('.')
+  file[0] = beerName.replace(/\s/g, '')
+  label[6] = file.join('.')
+  return label.join('/')
+}
+
+function setLabelFileName(beers){
+  beers.map(beer => (beer.label = setLabel(beer.label.split('/'), beer.name)))
+  return beers
+}
+
+console.log(setLabelFileName(beers))

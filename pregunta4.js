@@ -21,8 +21,10 @@
    * @param {*} discoveries 
    * @param {*} inventors 
    */
-  function addDiscoveries(inventor, discoveries, inventors){
-      
+  function addDiscoveries(inventor, discoveries, inventors){    
+      let object = inventors.find(inv => inv.last === inventor)
+      object.discoveries = discoveries
+      return inventors
   }
 
   console.log(addDiscoveries('Einstein', 
